@@ -64,8 +64,36 @@ function init() {
   new TypeWriter(txtElement, words, wait);
 }
 
+//Contact
+function validateform1(){  
+  var name=document.myform.name.value;
+  var subject=document.myform.subject.value; 
+  var email=document.myform.email.value;
+  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var phone=document.myform.phone.value;
+  var message=document.myform.message.value;
+    
+  if (name==null || name==""){  
+    alert("Name can't be blank");  
+    return false;
+  }else if (subject==null || subject==""){  
+    alert("Subject can't be blank");  
+    return false;
+  }else if (!filter.test(email)) {
+    alert('Please provide a valid email address');
+    email.focus;
+    return false;
+  }else if (phone==null || phone==""){  
+    alert("Phone Number can't be blank");  
+    return false;
+  }else if (message==null || message==""){  
+    alert("Message section can't be blank");  
+    return false;
+}
+}
+
  //Login
-function validateform(){  
+function validateform2(){  
   var name=document.myform.name.value;  
   var password=document.myform.password.value;  
     
@@ -79,7 +107,7 @@ function validateform(){
   }
 
   //Register
-  function validateform1(){  
+  function validateform3(){  
     var name=document.myform.name.value;  
     var name2=document.myform.name2.value;
     var email=document.myform.email.value;
@@ -106,6 +134,18 @@ function validateform(){
     }
   }
 
+
+  //Admin Login
+
+  // Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
   
 
